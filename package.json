@@ -1,0 +1,14 @@
+{
+  "name": "contracheque-v2",
+  "version": "1.0.0",
+  "description": "Consulta de Contracheque",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server -o contracheque-site.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

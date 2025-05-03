@@ -32,9 +32,13 @@
         }
 
         body {
-            background: var(--background-color);
-            background-image: linear-gradient(120deg, #f5f7fa 0%, #e8f5e9 100%);
-            color: var(--text-dark);
+            /* background: var(--background-color); */
+            /* background-image: linear-gradient(120deg, #f5f7fa 0%, #e8f5e9 100%); */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff; /* Alterado para branco para melhor contraste */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -50,23 +54,37 @@
             text-align: center;
         }
 
-        .title {
-            color: var(--primary-dark);
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centraliza o conteúdo */
             margin-bottom: 0.5rem;
+            gap: 1rem; /* Espaço entre logo e título */
+        }
+
+        .title-logo {
+            height: 4.0rem; /* Ajusta a altura para corresponder ao título */
+            width: auto;
+            vertical-align: middle; /* Alinha verticalmente com o texto */
+        }
+
+        .title {
+            color: #ffffff; /* Alterado para branco */
+            margin-bottom: 0; /* Removido margin-bottom daqui */
             font-weight: 600;
             font-size: 2.2rem;
             text-shadow: 1px 1px 2px rgba(15, 88, 55, 0.1);
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .subtitle {
-            color: var(--text-dark);
+            color: #dddddd; /* Alterado para cinza claro */
             margin-bottom: 2rem;
             font-weight: 400;
             font-size: 1rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .subtitle a {
@@ -100,7 +118,8 @@
         }
 
         .card {
-            background: var(--card-color);
+            /* background: var(--card-color); */
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             border-radius: 16px;
             box-shadow: var(--shadow);
             padding: 2.5rem 2rem;
@@ -128,23 +147,31 @@
         .form-group {
             margin-bottom: 1.5rem;
             text-align: left;
+            display: flex;
+            align-items: center;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+            /* display: block; */ /* Removido para alinhamento horizontal */
+            margin-bottom: 0; /* Removido margin-bottom */
+            margin-right: 1rem; /* Adicionado espaço à direita */
             font-size: 0.9rem;
-            color: var(--text-dark);
+            /* color: var(--text-dark); */
+            color: #333; /* Darker text for better contrast on light background */
             font-weight: 500;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            flex-shrink: 0; /* Impede que o rótulo encolha */
         }
 
         .form-control {
-            width: 100%;
+            /* width: 100%; */ /* Removido para usar flex-grow */
+            flex-grow: 1; /* Permite que o input ocupe o espaço restante */
             padding: 0.75rem 1rem;
             font-size: 1rem;
-            color: var(--text-dark);
-            background-color: #f8f9fa;
+            /* color: var(--text-dark); */
+            color: #333;
+            /* background-color: #f8f9fa; */
+            background-color: rgba(248, 249, 250, 0.95); /* Slightly transparent background */
             border: 2px solid transparent;
             border-radius: 8px;
             transition: var(--transition);
@@ -154,7 +181,8 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent-green);
-            background-color: #fff;
+            /* background-color: #fff; */
+            background-color: rgba(255, 255, 255, 1); /* Opaque on focus */
             box-shadow: 0 0 0 3px rgba(151, 215, 0, 0.1);
         }
 
@@ -232,15 +260,15 @@
             display: inline-block;
             padding: 0.75rem 1.5rem;
             margin: 1rem 0;
-            color: var(--primary-color);
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.85rem; /* Reduzido o tamanho da fonte */
             border-radius: 8px;
             transition: var(--transition);
             border: 1px solid var(--accent-green);
             background-color: rgba(151, 215, 0, 0.05);
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .secondary-link:hover {
@@ -261,9 +289,9 @@
         .note {
             margin-top: 1rem;
             font-size: 0.9rem;
-            color: var(--text-dark);
+            color: #cccccc; /* Alterado para cinza mais claro */
             font-style: italic;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .floating-bubbles {
@@ -395,7 +423,7 @@
             border-radius: 8px;
             background-color: rgba(67, 160, 71, 0.1);
             border: 1px solid var(--success-color);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         /* Animation for success message */
@@ -423,23 +451,14 @@
     </div>
 
     <div class="container">
-        <h1 class="title">Consulta de Contracheque</h1>
-        <p class="subtitle">Antes, verifique se seu contracheque está disponível <a href="#" id="check-availability">clicando aqui</a></p>
+        <div class="title-container">
+            <img src="imagens/logo3.png" alt="Logo PMCG" class="title-logo">
+            <h1 class="title"></h1>
+        </div>
+        <p class="subtitle">CONSULTA DE CONTRACHEQUES</p>
 
         <div class="card">
             <form id="contrachequeForm">
-                <div class="form-group">
-                    <label for="matricula">Matrícula</label>
-                    <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Digite sua matrícula" autocomplete="off">
-                    <p class="error-message">Matrícula é obrigatória</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="nascimento">Data de Nascimento</label>
-                    <input type="date" id="nascimento" name="nascimento" class="form-control">
-                    <p class="error-message">Data de nascimento é obrigatória</p>
-                </div>
-
                 <div class="form-group">
                     <label for="cpf">CPF</label>
                     <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" autocomplete="off">
@@ -447,6 +466,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="matricula">Matrícula</label>
+                    <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Digite sua matrícula" autocomplete="off">
+                    <p class="error-message">Matrícula é obrigatória</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="nascimento">Nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" class="form-control">
+                    <p class="error-message">Data de nascimento é obrigatória</p>
+                </div>
+
+                <div class="form-group" style="display: none;">
                     <label for="ano">Ano</label>
                     <div class="select-wrapper">
                         <select id="ano" name="ano" class="form-control">
@@ -459,7 +490,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn" id="submitBtn">preencher matrícula</button>
+                <button type="submit" class="btn" id="submitBtn">buscar documento(s)</button>
             </form>
         </div>
 
